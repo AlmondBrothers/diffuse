@@ -62,6 +62,14 @@
 
 	var _map2 = _interopRequireDefault(_map);
 
+	var _Login = __webpack_require__(307);
+
+	var _Login2 = _interopRequireDefault(_Login);
+
+	var _signup = __webpack_require__(308);
+
+	var _signup2 = _interopRequireDefault(_signup);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	//ReactDOM.render(<App />, document.getElementById('app'));
@@ -70,7 +78,11 @@
 	    _reactRouter.Router,
 	    { history: _reactRouter.browserHistory },
 	    _react2.default.createElement(_reactRouter.Route, { path: '/', component: _App2.default }),
-	    _react2.default.createElement(_reactRouter.Route, { path: '/map', component: _map2.default })
+	    _react2.default.createElement(_reactRouter.Route, { path: '/map', component: _map2.default }),
+	    _react2.default.createElement(_reactRouter.Route, { path: '/party', component: _App2.default }),
+	    _react2.default.createElement(_reactRouter.Route, { path: '/login', component: _Login2.default }),
+	    _react2.default.createElement(_reactRouter.Route, { path: '/logout', component: _Login2.default }),
+	    _react2.default.createElement(_reactRouter.Route, { path: '/signup', component: _signup2.default })
 	), document.getElementById('app'));
 
 /***/ },
@@ -29094,7 +29106,7 @@
 	  _createClass(Navbar, [{
 	    key: 'render',
 	    value: function render() {
-	      var pages = ['map', 'party', 'login', 'logout'];
+	      var pages = ['map', 'party', 'login', 'logout', 'signup'];
 	      var navLinks = pages.map(function (page, index) {
 	        return _react2.default.createElement(
 	          'li',
@@ -32892,6 +32904,108 @@
 	    return _reactRouter.withRouter;
 	  }
 	});
+
+/***/ },
+/* 307 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactDom = __webpack_require__(32);
+
+	var _reactDom2 = _interopRequireDefault(_reactDom);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	//functional stateless attempt?
+
+	var Login = function Login() {
+	  return _react2.default.createElement(
+	    'form',
+	    { name: 'login', method: 'GET', action: '/api/login' },
+	    _react2.default.createElement(
+	      'label',
+	      null,
+	      'username :',
+	      _react2.default.createElement('input', { type: 'text', name: 'username' }),
+	      _react2.default.createElement('br', null)
+	    ),
+	    _react2.default.createElement(
+	      'label',
+	      null,
+	      'password :',
+	      _react2.default.createElement('input', { type: 'password', name: 'password' }),
+	      _react2.default.createElement('br', null)
+	    ),
+	    _react2.default.createElement('input', { type: 'submit', value: 'Submit' }),
+	    _react2.default.createElement(
+	      'button',
+	      null,
+	      ' ',
+	      _react2.default.createElement(
+	        'a',
+	        { href: '/signup' },
+	        ' Sign-Up '
+	      )
+	    )
+	  );
+	};
+
+	//export default Login;
+	module.exports = Login;
+
+/***/ },
+/* 308 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactDom = __webpack_require__(32);
+
+	var _reactDom2 = _interopRequireDefault(_reactDom);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var Signup = function Signup() {
+	  return _react2.default.createElement(
+	    'form',
+	    { name: 'signup', method: 'POST', action: '/signup' },
+	    _react2.default.createElement(
+	      'label',
+	      { placeholder: 'username' },
+	      'username :',
+	      _react2.default.createElement('input', { type: 'text', name: 'username' }),
+	      _react2.default.createElement('br', null)
+	    ),
+	    _react2.default.createElement(
+	      'label',
+	      { placeholder: 'password' },
+	      'password :',
+	      _react2.default.createElement('input', { type: 'text', name: 'password' }),
+	      _react2.default.createElement('br', null)
+	    ),
+	    _react2.default.createElement('input', { type: 'submit', value: 'Submit' }),
+	    _react2.default.createElement(
+	      'button',
+	      null,
+	      _react2.default.createElement(
+	        'a',
+	        { href: '/login' },
+	        ' Login '
+	      )
+	    )
+	  );
+	};
+
+	module.exports = Signup;
 
 /***/ }
 /******/ ]);

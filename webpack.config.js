@@ -11,12 +11,6 @@ module.exports = {
         loaders: [
           'babel?presets[]=react,presets[]=es2015'
         ],
-        // include: './index.js',
-        // query: {
-        //   presets: [
-        //     'es2015'
-        //   ]
-        // }
       }
     ]
   }

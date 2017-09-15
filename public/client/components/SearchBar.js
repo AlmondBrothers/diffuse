@@ -4,8 +4,10 @@ import ReactDOM from 'react-dom';
 
 var SearchBar = (props) => (
 	<form onSubmit={props.getYoutubeSong}>
-		<input type='text' className="form-control" placeholder="Add a song to the playlist!" onChange={props.handleChange}/><br />
-		<input type='submit' className="submit-button" value='Search'/>
+    <div className={"horizontalFlex searchbar"}>
+  		<input type='text' placeholder="Add a song to the playlist!" onChange={props.handleChange}/><br />
+  		<input className={"button"} type='submit' value='Search'/>
+    </div>
 	</form>
 
 )

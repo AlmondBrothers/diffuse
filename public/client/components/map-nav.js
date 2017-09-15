@@ -8,17 +8,14 @@ class Navbar extends React.Component {
   }
 
   render() {
-    var pages = ['map', 'logout'];
+    var pages = ['map', 'logout', 'party'];
     var navLinks = pages.map((page, index)=> {
       return (
-        <li key={index}>
-          <Link to={'/' + page}>{page}</Link>
-
-        </li>
+        <Link key={index} className="button" to={'/' + page}>{page.charAt(0).toUpperCase() + page.slice(1)}</Link>
       );
     });
     return (
-      <ul>{navLinks}</ul>
+      <ul id="navbar">{navLinks}</ul>
     )  
   }
 }

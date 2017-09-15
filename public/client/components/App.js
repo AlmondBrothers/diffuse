@@ -176,12 +176,17 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className={"verticalFlex card"}>
+        <div>
+          <img src={'/static/images/headphones.png'}></img>
+        </div>
         <NavBar />
         <SearchBar handleChange={this.handleChange.bind(this)} getYoutubeSong={this.getYoutubeSong.bind(this)}/>
-        <AudioPlayer currentSong={this.state.currentSong} playNextSong={this.playNextSong.bind(this)} />
-        <SongList data={this.state.data} srcs={this.state.srcs} handlePlay={this.handlePlay.bind(this)} handleRemove={this.handleRemove.bind(this)}/>
+        <h3>Search Results</h3>
         <Search searchResults={this.state.searchResults} handleSearchClicks={this.handleSearchClicks.bind(this)}/>
+        <h3>Playlist</h3>
+        <SongList data={this.state.data} srcs={this.state.srcs} handlePlay={this.handlePlay.bind(this)} handleRemove={this.handleRemove.bind(this)}/>
+        <AudioPlayer currentSong={this.state.currentSong} playNextSong={this.playNextSong.bind(this)} />
     </div>
     )
   }

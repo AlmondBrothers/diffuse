@@ -4,7 +4,7 @@ import Song from './Song.js';
 
 var Playlist = (props) => (
   <div>
-    <ul className='list-group'>
+    <ul>
       {props.data.map(function(datum, i) {
         return (
           <Song key = {i} datum={datum} index={i} handlePlay={props.handlePlay} handleRemove={props.handleRemove} />

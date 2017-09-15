@@ -6,9 +6,7 @@ var SearchSong = (props) => (
 	// Two ways of making the song model - as a link and as a button  --> used to be line 9 <img className="thumbnail" src="#"/>
 	<div>
 		<li>
-			<button onClick={function () {props.handleSearchClicks(props.index)}}>
-			Add
-			</button>
+			<button onClick={function () {props.handleSearchClicks(props.index)}}>Add</button>
 			<p>{props.song.snippet.title}</p>
 		</li>
 	</div>

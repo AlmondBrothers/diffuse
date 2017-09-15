@@ -4,13 +4,17 @@ import ReactDOM from 'react-dom';
 //functional stateless attempt?
 
 var Login = () => (
-  <form name="login" method="GET" action="/api/login" >
-    <input type="text" placeholder="username" name="username" /><br/>
-    <input type="password" placeholder="password" name="password" /><br/>
-    <input type="submit"  value="Submit"></input>
-    <button><a href="/signup">Sign-Up</a></button>
-  </form>
+  <div className={"verticalFlex card"}>
+    <img src={'/static/images/headphones.png'}></img>
+    <div className={"verticalFlex"}>
+      <input type="text" placeholder="username" name="username"></input>
+      <input type="password" placeholder="password" name="password"></input>
+    </div>
+    <div>
+      <input className={"button"} type="submit"  value="Submit"></input>
+      <button className={"button"}><a href="/signup">Sign-Up</a></button>
+    </div>
+  </div>
 )
 
-//export default Login;
 module.exports = Login;

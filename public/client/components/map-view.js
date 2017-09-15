@@ -10,7 +10,7 @@ export default class MapContainer extends React.Component {
   render() {
     return (
       <div>
-        <div id="googleMaps" style={{'height': '500px', 'width': '500px', 'borderRadius': '5px'}}></div>
+        <div id="googleMaps"></div>
       </div>
   )};
 
@@ -38,8 +38,8 @@ export default class MapContainer extends React.Component {
     /* ################### Map Init ################### */
     function initMap() {
       var map = new google.maps.Map(document.getElementById('googleMaps'), {
-        center: {lat: 37.783744, lng: -122.409079},
-        zoom: 5,
+        center: { lat: 37.783744, lng: -122.409079 },
+        zoom: 6,
         zoomControl: false,
         mapTypeControl: false,
         scaleControl: false,

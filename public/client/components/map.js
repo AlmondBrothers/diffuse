@@ -51,10 +51,17 @@ class Map extends React.Component {
 
   render() {
     return (
-      <div id="map">
-        <NavBar />
-        <MapView />
-        <Button buttonFunction={this.createParty} buttonName="Create Party" />
+      <div className="verticalFlex card">
+        <div className="horizontalFlex">
+          <NavBar />
+          <div className="horizontalFlex">
+            <button onClick={this.createParty}>New Party</button>
+          </div>
+        </div>
+        <div className="horizontalFlex">
+          <MapView />
+          <img src={'/static/images/headphones.png'}></img>
+        </div>
       </div>
   )};
 

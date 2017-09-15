@@ -22,17 +22,22 @@ class Signup extends React.Component {
   };
 
   render() {
+    const latitude = parseInt(this.state.latitude).toFixed(2);
+    const longitude = parseInt(this.state.longitude).toFixed(2);
     return(
-      <div>
-        <MapView />
-        <form name="signup" method="POST" action="/signup">
-          <input type="text" placeholder="username" name="username" /><br/>
-          <input type="password" placeholder="password" name="password" /><br/>
-          <input type="text" placeholder={this.state.latitude} name="latitude" value={this.state.latitude} readOnly /><br/>
-          <input type="text" placeholder={this.state.longitude} name="longitude" value={this.state.longitude} readOnly /><br/>
-          <input type="submit"  value="Submit"></input>
-          <button><a href="/login">Login</a></button>
-        </form>
+      <div className={"verticalFlex card"}>
+        <img src={'/static/images/headphones.png'}></img>
+        <div className={"horizontalFlex"}>
+          <MapView />
+          <form name="signup" method="POST" action="/signup">
+            <input type="text" placeholder="username" name="username" /><br/>
+            <input type="password" placeholder="password" name="password" /><br/>
+            <input type="text" placeholder={latitude} name="latitude" value={latitude} readOnly /><br/>
+            <input type="text" placeholder={longitude} name="longitude" value={longitude} readOnly /><br/>
+            <input className={"button"} type="submit"  value="Submit"></input>
+            <button className={"button"}><a href="/login">Login</a></button>
+          </form>
+        </div>
       </div>
   )};
 

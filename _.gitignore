@@ -1,5 +1,7 @@
 ### node etc ###
 
+bundle
+
 # Logs
 logs
 *.log

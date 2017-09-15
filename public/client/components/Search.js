@@ -5,8 +5,14 @@ import SearchSong from './SearchSong.js';
 import SearchBar from './SearchBar.js';
 
 var Search = (props) => (
-  <div className="playlist-group">
-    <SearchResults className = "list-group" searchResults={props.searchResults} handleSearchClicks={props.handleSearchClicks}/>
+  <div className="horizontalFlex list" id="searchResults">
+    <ul>
+      {props.searchResults.map(function(song, i) {
+        return (
+          <SearchSong key = {i} index={i} song={song} handleSearchClicks={props.handleSearchClicks}/>
+        )
+      })}
+    </ul>
   </div>
 )
 
